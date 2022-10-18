@@ -1,0 +1,9 @@
+﻿{
+  "TokenManagement": {
+    "Secret": "99ce883bfb15df8e5422d9f6e987500be6d98fb1e47a13aa12f29e38c3ad0a99",
+    "Issuer": "Tester",
+    "Audience": "Tester!GrpcService",
+    "AccessExpiration": 1440,
+    "RefreshExpiration": 10
+  }
+}

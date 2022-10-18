@@ -1,0 +1,29 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "GrpcInterface";
+
+package user;
+
+// The greeting service definition.
+service User {
+  // Sends a greeting
+  rpc Login (LoginRequest) returns (LoginResponse);
+  rpc AuthHello(google.protobuf.Empty) returns (AuthHelloResponse);
+}
+
+// The request message containing the user's name.
+message LoginRequest {
+  string id = 1;
+}
+
+// The response message containing the greetings.
+message LoginResponse {
+  bool result = 1;
+  string accessToken = 2;
+}
+
+message AuthHelloResponse {
+  bool result = 1;
+  string message = 2;
+}
