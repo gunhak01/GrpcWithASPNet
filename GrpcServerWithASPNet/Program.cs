@@ -20,8 +20,8 @@ config = CustomConfigurationHelper.CreateConfigurationBuilder("./Configuration/C
 builder.Services.Configure<TokenManagement>(config.GetSection("TokenManagement"));
 
 var token = config.GetSection("TokenManagement").Get<TokenManagement>();
-//var secret = Encoding.ASCII.GetBytes(token.Secret);
-var secret = Encoding.UTF8.GetBytes(token.Secret);
+var secret = Encoding.ASCII.GetBytes(token.Secret);
+//var secret = Encoding.UTF8.GetBytes(token.Secret);
 
 builder.Services.AddAuthentication(x =>
 {

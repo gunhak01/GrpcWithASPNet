@@ -31,8 +31,8 @@ public class JwtTokenHelper
     token.Audience,
     claims,
     expires: now.AddMinutes(accessExpiration),
-    //signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(token.Secret)), SecurityAlgorithms.HmacSha512Signature));
-        signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(token.Secret)), SecurityAlgorithms.HmacSha512Signature));
+    signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(token.Secret)), SecurityAlgorithms.HmacSha512Signature));
+    //signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(token.Secret)), SecurityAlgorithms.HmacSha512Signature));
     return new JwtSecurityTokenHandler().WriteToken(jwtToken);
 
   }
